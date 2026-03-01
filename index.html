@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baugrundstück Tahitótfalu | Bauplatz zum Verkauf</title>
+  <meta name="description" content="Schönes Baugrundstück in Tahitótfalu, Ungarn – 28 km von Budapest, im Donauknie. Strom, Wasser und Gas vorhanden." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Variables ───────────────────────────────────────────── */
+    :root {
+      --green-dark:  #1B4332;
+      --green:       #2D6A4F;
+      --green-mid:   #40916C;
+      --green-light: #52B788;
+      --green-pale:  #D8F3DC;
+      --amber:       #F4A261;
+      --amber-dark:  #E76F51;
+      --bg:          #F5FAF6;
+      --white:       #ffffff;
+      --text:        #1a2e1f;
+      --text-soft:   #4a6358;
+      --border:      #d0ead8;
+      --shadow:      rgba(27,67,50,0.12);
+    }
+
+    /* ─── Reset ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Navigation ──────────────────────────────────────────── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(27,67,50,0.96);
+      backdrop-filter: blur(12px);
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+      transition: box-shadow 0.3s;
+    }
+    #navbar.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.6rem;
+      color: #fff; font-size: 1rem; font-weight: 700; letter-spacing: 0.3px;
+    }
+    .nav-brand-dot { color: var(--amber); font-size: 1.4rem; line-height: 1; }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.82); font-size: 0.88rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--amber); }
+
+    .lang-bar { display: flex; gap: 0.4rem; }
+    .lang-btn {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.72);
+      padding: 0.28rem 0.7rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem; font-weight: 600;
+      transition: all 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--amber); border-color: var(--amber); color: #fff;
+    }
+
+    /* ─── Hero ────────────────────────────────────────────────── */
+    .hero {
+      position: relative; height: 100vh; min-height: 600px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.6s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(27,67,50,0.45) 0%,
+        rgba(27,67,50,0.55) 60%,
+        rgba(27,67,50,0.70) 100%
+      );
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; color: #fff;
+      padding: 0 1.5rem; max-width: 860px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--amber); color: #fff;
+      padding: 0.38rem 1.2rem;
+      border-radius: 30px; font-size: 0.78rem;
+      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+    .hero-content h1 {
+      font-size: clamp(2.1rem, 5.5vw, 3.8rem);
+      font-weight: 700; line-height: 1.12;
+      margin-bottom: 1.1rem;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.25);
+    }
+    .hero-content h1 em { font-style: normal; color: var(--amber); }
+    .hero-content p {
+      font-size: clamp(0.98rem, 2vw, 1.15rem);
+      font-weight: 300; opacity: 0.94;
+      margin-bottom: 2.4rem;
+      max-width: 580px; margin-left: auto; margin-right: auto;
+    }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-amber {
+      background: var(--amber); color: #fff;
+      padding: 0.85rem 2.2rem; border-radius: 50px;
+      font-weight: 600; font-size: 0.95rem;
+      border: 2px solid var(--amber);
+      transition: all 0.3s; cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-amber:hover {
+      background: var(--amber-dark); border-color: var(--amber-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(244,162,97,0.45);
+    }
+    .btn-outline {
+      background: transparent; color: #fff;
+      padding: 0.85rem 2.2rem; border-radius: 50px;
+      font-weight: 600; font-size: 0.95rem;
+      border: 2px solid rgba(255,255,255,0.65);
+      transition: all 0.3s; cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.14); border-color: #fff;
+    }
+    .hero-scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%); z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      color: rgba(255,255,255,0.65); font-size: 0.72rem; letter-spacing: 1px;
+      text-transform: uppercase; animation: bob 2.2s ease-in-out infinite;
+    }
+    .hero-scroll-hint svg { width: 22px; height: 22px; }
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(9px); }
+    }
+    /* hero dot indicators */
+    .hero-dots {
+      position: absolute; bottom: 5rem; left: 50%;
+      transform: translateX(-50%); z-index: 2;
+      display: flex; gap: 0.5rem;
+    }
+    .hero-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer; transition: all 0.3s;
+    }
+    .hero-dot.active { background: var(--amber); transform: scale(1.3); }
+
+    /* ─── Quick-Facts Strip ───────────────────────────────────── */
+    .facts-strip {
+      background: var(--green);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .fact-item {
+      text-align: center; padding: 1.8rem 1rem;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .fact-item:last-child { border-right: none; }
+    .fact-icon { font-size: 1.7rem; margin-bottom: 0.4rem; }
+    .fact-value {
+      font-size: 1.55rem; font-weight: 700;
+      color: var(--amber); display: block;
+    }
+    .fact-label { font-size: 0.8rem; color: rgba(255,255,255,0.82); font-weight: 400; }
+
+    /* ─── Generic Section Layout ──────────────────────────────── */
+    section { padding: 5.5rem 2rem; }
+    .container { max-width: 1180px; margin: 0 auto; }
+
+    .tag {
+      display: inline-block;
+      background: rgba(82,183,136,0.14);
+      color: var(--green-mid);
+      border: 1px solid rgba(82,183,136,0.3);
+      padding: 0.28rem 0.9rem; border-radius: 20px;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.65rem);
+      font-weight: 700; color: var(--green-dark); line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--text-soft); font-weight: 300;
+      max-width: 580px;
+    }
+
+    /* ─── About ───────────────────────────────────────────────── */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; margin-top: 3rem;
+    }
+    .about-img {
+      border-radius: 22px; overflow: hidden;
+      box-shadow: 0 25px 65px var(--shadow);
+      aspect-ratio: 4/3;
+    }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text h3 {
+      font-size: 1.35rem; color: var(--green-dark);
+      margin-bottom: 0.85rem; font-weight: 600;
+    }
+    .about-text p {
+      color: var(--text-soft); font-size: 0.95rem; margin-bottom: 0.85rem;
+    }
+    .chips {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.4rem;
+    }
+    .chip {
+      background: var(--green-pale); color: var(--green-dark);
+      border-radius: 30px; padding: 0.35rem 1rem;
+      font-size: 0.82rem; font-weight: 500;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+
+    /* ─── Reasons ─────────────────────────────────────────────── */
+    .reasons-section { background: linear-gradient(145deg, #eef7f1 0%, #e2f0e8 100%); }
+    .reasons-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem; margin-top: 3rem;
+    }
+    .reason-card {
+      background: var(--white); border-radius: 22px;
+      padding: 2.2rem 1.8rem;
+      box-shadow: 0 8px 32px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative; overflow: hidden;
+    }
+    .reason-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--green-light), var(--green));
+    }
+    .reason-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 55px rgba(27,67,50,0.16);
+    }
+    .reason-icon-wrap {
+      width: 58px; height: 58px;
+      background: linear-gradient(135deg, var(--green-light), var(--green));
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.65rem; margin-bottom: 1.3rem;
+    }
+    .reason-card h3 {
+      font-size: 1.18rem; color: var(--green-dark);
+      margin-bottom: 0.65rem; font-weight: 600;
+    }
+    .reason-card p { color: var(--text-soft); font-size: 0.9rem; line-height: 1.72; }
+
+    /* ─── Property ────────────────────────────────────────────── */
+    .property-section { background: var(--green-dark); color: #fff; }
+    .property-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; margin-top: 3rem;
+    }
+    .property-section .tag {
+      background: rgba(244,162,97,0.18); color: var(--amber);
+      border-color: rgba(244,162,97,0.3);
+    }
+    .property-section .section-title { color: #fff; }
+    .property-section .section-sub { color: rgba(255,255,255,0.72); }
+    .feats { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.8rem; }
+    .feat {
+      display: flex; align-items: center; gap: 1rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 14px; padding: 1.1rem 1.4rem;
+    }
+    .feat-ic { font-size: 1.4rem; width: 40px; text-align: center; flex-shrink: 0; }
+    .feat-info h4 { color: #fff; font-size: 0.92rem; font-weight: 600; margin-bottom: 0.15rem; }
+    .feat-info p { color: rgba(255,255,255,0.58); font-size: 0.8rem; }
+
+    .img-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 200px 180px;
+      gap: 0.9rem;
+    }
+    .img-mosaic .main { grid-column: 1 / -1; border-radius: 16px; overflow: hidden; }
+    .img-mosaic .sub  { border-radius: 16px; overflow: hidden; }
+    .img-mosaic img   { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ─── Gallery ─────────────────────────────────────────────── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.1rem; margin-top: 3rem;
+    }
+    .gal-item {
+      border-radius: 16px; overflow: hidden;
+      aspect-ratio: 4/3; cursor: pointer; position: relative;
+    }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+    .gal-item:hover img { transform: scale(1.06); }
+    .gal-overlay {
+      position: absolute; inset: 0;
+      background: rgba(27,67,50,0.38);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .gal-item:hover .gal-overlay { opacity: 1; }
+    .gal-overlay svg { width: 36px; height: 36px; color: #fff; }
+
+    /* ─── Lightbox ────────────────────────────────────────────── */
+    #lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.93); z-index: 9999;
+      align-items: center; justify-content: center;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 10px; }
+    #lb-close {
+      position: absolute; top: 1.2rem; right: 1.8rem;
+      font-size: 2.2rem; color: #fff; cursor: pointer;
+      background: none; border: none; opacity: 0.75; line-height: 1;
+      font-family: 'Poppins', sans-serif;
+    }
+    #lb-close:hover { opacity: 1; }
+    .lb-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2);
+      color: #fff; font-size: 1.5rem;
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .lb-nav:hover { background: rgba(255,255,255,0.22); }
+    #lb-prev { left: 1.2rem; }
+    #lb-next { right: 1.2rem; }
+    #lb-counter {
+      position: absolute; bottom: 1.5rem; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.6); font-size: 0.82rem;
+    }
+
+    /* ─── Map ─────────────────────────────────────────────────── */
+    .map-wrap {
+      margin-top: 3rem; border-radius: 22px; overflow: hidden;
+      height: 420px; box-shadow: 0 16px 48px var(--shadow);
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; }
+
+    /* ─── CTA / Contact ───────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 100%);
+      color: #fff; text-align: center; padding: 5rem 2rem;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.75rem, 3vw, 2.7rem); font-weight: 700; margin-bottom: 0.9rem;
+    }
+    .cta-section p {
+      font-size: 1rem; opacity: 0.9;
+      max-width: 520px; margin: 0 auto 2.5rem;
+    }
+    .contact-cards {
+      display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 18px; padding: 1.5rem 2rem;
+      min-width: 210px; text-align: center;
+      transition: background 0.3s;
+    }
+    .contact-card:hover { background: rgba(255,255,255,0.22); }
+    .cc-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .cc-label { font-size: 0.75rem; opacity: 0.65; margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.8px; }
+    .cc-value { font-size: 1rem; font-weight: 600; }
+
+    /* ─── Footer ──────────────────────────────────────────────── */
+    footer {
+      background: var(--green-dark); color: rgba(255,255,255,0.5);
+      text-align: center; padding: 1.4rem 2rem; font-size: 0.82rem;
+    }
+
+    /* ─── Scroll Animations ───────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── Prop intro quote ────────────────────────────────────── */
+    .prop-intro {
+      color: rgba(255,255,255,0.82); font-size: 0.92rem; font-style: italic;
+      margin-top: 1.2rem; padding: 1rem 1.2rem;
+      border-left: 3px solid var(--amber);
+      background: rgba(255,255,255,0.05); border-radius: 0 10px 10px 0;
+      line-height: 1.7;
+    }
+
+    /* ─── Infra grid ───────────────────────────────────────────── */
+    .infra-section { margin-top: 2.8rem; }
+    .infra-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--green-mid);
+      margin-bottom: 0.9rem;
+    }
+    .infra-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.65rem;
+    }
+    .infra-item {
+      background: var(--green-pale); color: var(--green-dark);
+      border-radius: 12px; padding: 0.72rem 1rem;
+      font-size: 0.86rem; font-weight: 500; line-height: 1.4;
+    }
+
+    /* ─── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 980px) {
+      .facts-strip { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .property-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .reasons-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .img-mosaic { grid-template-rows: 160px 130px; }
+    }
+    @media (max-width: 560px) {
+      .facts-strip { grid-template-columns: repeat(2, 1fr); }
+      .fact-item { padding: 1.2rem 0.5rem; }
+      .hero-badge { font-size: 0.7rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── Navbar ─────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-dot">◆</span>
+      <span data-i18n="brand">Tahitótfalu Immobilien</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about"    data-i18n="nav_about">Über den Ort</a></li>
+      <li><a href="#reasons"  data-i18n="nav_reasons">Vorteile</a></li>
+      <li><a href="#property" data-i18n="nav_property">Grundstück</a></li>
+      <li><a href="#gallery"  data-i18n="nav_gallery">Galerie</a></li>
+      <li><a href="#contact"  data-i18n="nav_contact">Kontakt</a></li>
+    </ul>
+    <div class="lang-bar">
+      <button class="lang-btn"        onclick="setLang('de')">DE</button>
+      <button class="lang-btn"        onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" onclick="setLang('hu')">HU</button>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ───────────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('images/Gro%C3%9F%20(20250422_100028).jpeg')"></div>
+      <div class="hero-slide"        style="background-image:url('images/Gro%C3%9F%20(20250422_095832).jpeg')"></div>
+      <div class="hero-slide"        style="background-image:url('images/Gro%C3%9F%20(20250422_100529).jpeg')"></div>
+      <div class="hero-slide"        style="background-image:url('images/WhatsApp%20Image%202026-03-01%20at%2010.39.10.jpeg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge" data-i18n="hero_badge">Baugrundstück zum Verkauf</div>
+      <h1 data-i18n="hero_title">Ihr Traumgrundstück in <em>Tahitótfalu</em></h1>
+      <p data-i18n="hero_sub">Malerische Lage im Donauknie, nur 28 km von Budapest – mit allen Anschlüssen sofort bebaubar.</p>
+      <div class="hero-cta">
+        <a href="#property" class="btn-amber" data-i18n="hero_btn1">Grundstück entdecken</a>
+        <a href="#contact"  class="btn-outline" data-i18n="hero_btn2">Kontakt aufnehmen</a>
+      </div>
+    </div>
+
+    <div class="hero-dots" id="heroDots"></div>
+
+    <div class="hero-scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+      <span data-i18n="scroll">Mehr entdecken</span>
+    </div>
+  </section>
+
+  <!-- ─── Quick Facts ─────────────────────────────────────────── -->
+  <div class="facts-strip">
+    <div class="fact-item">
+      <div class="fact-icon">📍</div>
+      <span class="fact-value">30 km</span>
+      <span class="fact-label" data-i18n="fact1">von Budapest</span>
+    </div>
+    <div class="fact-item">
+      <div class="fact-icon">🌿</div>
+      <span class="fact-value" data-i18n="fact2_val">Natur pur</span>
+      <span class="fact-label" data-i18n="fact2">Donauknie & Pilis</span>
+    </div>
+    <div class="fact-item">
+      <div class="fact-icon">⚡</div>
+      <span class="fact-value" data-i18n="fact3_val">Sofort</span>
+      <span class="fact-label" data-i18n="fact3">Gas, Strom, Wasser & Abwasser</span>
+    </div>
+    <div class="fact-item">
+      <div class="fact-icon">🏡</div>
+      <span class="fact-value" data-i18n="fact4_val">Ideal</span>
+      <span class="fact-label" data-i18n="fact4">für Familien</span>
+    </div>
+  </div>
+
+  <!-- ─── About Tahitótfalu ───────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="tag" data-i18n="about_tag">Der Ort</div>
+      <h2 class="section-title" data-i18n="about_title">Willkommen in Tahitótfalu</h2>
+      <p class="section-sub" data-i18n="about_sub">Ein Dorf, das Natur, Geschichte und Lebensqualität vereint – inmitten einer der schönsten Landschaften Ungarns.</p>
+
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="images/Gro%C3%9F%20(20250422_100124).jpeg" alt="Tahitótfalu – Grundstück im Frühling" />
+        </div>
+        <div class="about-text reveal reveal-delay-1">
+          <h3 data-i18n="about_h3">Zwischen Donauknie und Pilis-Gebirge</h3>
+          <p data-i18n="about_p1">Tahitótfalu liegt im Norden des Komitats Pest, rund 28 km nördlich von Budapest – direkt im malerischen Donauknie. Das Dorf besteht aus zwei historisch gewachsenen Ortsteilen: <strong>Tahi</strong> auf dem Festland und <strong>Tótfalu</strong> auf der Szentendre-Insel, verbunden durch die Tildy-Brücke.</p>
+          <p data-i18n="about_p2">Die Umgebung bietet atemberaubende Landschaften mit dem mächtigen Donaubogen, dichten Wäldern des Pilis-Gebirges und einer reichen Tier- und Pflanzenwelt. Historische Städte wie <strong>Szentendre</strong> und <strong>Visegrád</strong> sind in wenigen Autominuten erreichbar.</p>
+          <p data-i18n="about_p3">Das Dorf vereint das Beste zweier Welten: das ruhige Landleben in einer intakten Naturlandschaft – mit bequemem Zugang zu Budapest für Arbeit, Bildung und Kultur.</p>
+          <p data-i18n="about_p4">Das Grundstück liegt auf einem kleinen Hügel – kein Hochwasser, kein Straßenlärm. Bis zum romantischen Donauufer sind es nur <strong>5 Minuten zu Fuß</strong>.</p>
+          <div class="chips">
+            <span class="chip">🏔️ <span data-i18n="chip1">Pilis-Gebirge</span></span>
+            <span class="chip">🌊 <span data-i18n="chip2">Donauknie</span></span>
+            <span class="chip">🏰 <span data-i18n="chip3">Nähe Visegrád</span></span>
+            <span class="chip">🎨 <span data-i18n="chip4">Nähe Szentendre</span></span>
+            <span class="chip">🚗 <span data-i18n="chip5">28 km Budapest</span></span>
+            <span class="chip">🌳 <span data-i18n="chip6">Naturschutzgebiet</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infrastructure -->
+      <div class="infra-section reveal">
+        <div class="infra-label" data-i18n="infra_label">Infrastruktur & Nahversorgung</div>
+        <div class="infra-grid">
+          <div class="infra-item" data-i18n="infra1">🚌 Bushaltestelle · 500 m</div>
+          <div class="infra-item" data-i18n="infra2">🏪 Tesco & Rossmann · 10 min zu Fuß</div>
+          <div class="infra-item" data-i18n="infra3">🏥 Arzt, Zahnarzt & Kinderarzt · im Ort</div>
+          <div class="infra-item" data-i18n="infra4">🌊 Donauufer · 5 min zu Fuß</div>
+          <div class="infra-item" data-i18n="infra5">🎓 Krippe, Kindergarten & Schule · in der Nähe</div>
+          <div class="infra-item" data-i18n="infra6">🚢 Schiff · Donauverbindung möglich</div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-wrap reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10771.57!2d19.042!3d47.835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741e1a1e1a1e1a1%3A0x0!2sTahit%C3%B3tfalu%2C+Hungary!5e0!3m2!1sde!2sde!4v1680000000000!5m2!1sde!2sde"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Karte Tahitótfalu">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3 Reasons ──────────────────────────────────────────── -->
+  <section id="reasons" class="reasons-section">
+    <div class="container">
+      <div class="tag" data-i18n="reasons_tag">Warum hier bauen?</div>
+      <h2 class="section-title" data-i18n="reasons_title">3 Gründe für junge Familien</h2>
+      <p class="section-sub" data-i18n="reasons_sub">Tahitótfalu ist kein gewöhnliches Dorf – es ist ein Ort, an dem Kinder aufblühen und Familien wurzeln.</p>
+
+      <div class="reasons-grid">
+        <div class="reason-card reveal">
+          <div class="reason-icon-wrap">🌲</div>
+          <h3 data-i18n="r1_title">Natur als Kinderzimmer</h3>
+          <p data-i18n="r1_text">Endlose Wander- und Radwege durch das Pilis-Gebirge, der Donauarm zum Baden und Kajakfahren, saubere Luft und unberührte Natur direkt vor der Haustür. Kinder wachsen hier gesund, aktiv und mit echter Verbindung zur Natur auf – fern von Stadtlärm und Abgasen.</p>
+        </div>
+        <div class="reason-card reveal reveal-delay-1">
+          <div class="reason-icon-wrap">🏫</div>
+          <h3 data-i18n="r2_title">Sichere Gemeinschaft</h3>
+          <p data-i18n="r2_text">Tahitótfalu ist ein lebendiges Dorf mit lokalen Schulen, Kindergarten und einem starken Gemeinschaftsleben. Kinder können sicher auf Straßen spielen, Nachbarn kennen sich, und die Region gilt als eine der sichersten in der Umgebung Budapests – ideal für Familien, die Wert auf Geborgenheit legen.</p>
+        </div>
+        <div class="reason-card reveal reveal-delay-2">
+          <div class="reason-icon-wrap">🚗</div>
+          <h3 data-i18n="r3_title">Budapest in 30 Minuten</h3>
+          <p data-i18n="r3_text">Mit dem Auto ist man in etwa 30 Minuten im Herzen Budapests – für Arbeit, Universitäten, Krankenhäuser und Kulturangebote. Gleichzeitig kehrt man abends in die Stille des Donaukniees zurück. Diese perfekte Balance zwischen Stadt und Natur macht Tahitótfalu zur Top-Adresse für Pendlerfamilien.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Property Details ────────────────────────────────────── -->
+  <section id="property" class="property-section">
+    <div class="container">
+      <div class="property-grid">
+        <div class="property-text">
+          <div class="tag" data-i18n="prop_tag">Das Grundstück</div>
+          <h2 class="section-title" data-i18n="prop_title">Alles bereit – sofort bebaubar</h2>
+          <p class="section-sub" data-i18n="prop_sub">Dieses Grundstück in Tahitótfalu bietet ideale Voraussetzungen, um Ihr Traumhaus zu verwirklichen.</p>
+          <p class="prop-intro" data-i18n="prop_desc">Ein gepflegtes, ebenes Grundstück mit altem Baumbestand und Obstbäumen. Vogelgezwitscher, Eichhörnchen und idyllische Natur – und trotzdem ist die Bushaltestelle nur 500 m entfernt.</p>
+          <div class="feats">
+            <div class="feat">
+              <span class="feat-ic">📍</span>
+              <div class="feat-info">
+                <h4 data-i18n="f1_h">Lage</h4>
+                <p data-i18n="f1_p">Tahitótfalu, Komitat Pest – Donauknie</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-ic">⚡</span>
+              <div class="feat-info">
+                <h4 data-i18n="f2_h">Strom</h4>
+                <p data-i18n="f2_p">In der Straße – Hausanschluss erforderlich</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-ic">💧</span>
+              <div class="feat-info">
+                <h4 data-i18n="f3_h">Wasser</h4>
+                <p data-i18n="f3_p">In der Straße – Hausanschluss erforderlich</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-ic">🔥</span>
+              <div class="feat-info">
+                <h4 data-i18n="f4_h">Gas</h4>
+                <p data-i18n="f4_p">Auf dem Grundstück vorhanden</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-ic">🚿</span>
+              <div class="feat-info">
+                <h4 data-i18n="f5_h">Abwasser</h4>
+                <p data-i18n="f5_p">In der Straße – Anschluss erforderlich</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-ic">📐</span>
+              <div class="feat-info">
+                <h4 data-i18n="f7_h">Grundstücksgröße</h4>
+                <p data-i18n="f7_p">790 m² – eben und gepflegt</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-ic">🏗️</span>
+              <div class="feat-info">
+                <h4 data-i18n="f8_h">Bauklasse</h4>
+                <p data-i18n="f8_p">LKE-4: max. 30 % bebaubar, Höhe max. 5,5 m</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-ic">🌳</span>
+              <div class="feat-info">
+                <h4 data-i18n="f9_h">Baumbestand</h4>
+                <p data-i18n="f9_p">Walnuss, Pfirsich, Esskastanie, Pflaume</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:2rem;">
+            <a href="#contact" class="btn-amber" data-i18n="prop_cta">Jetzt anfragen</a>
+          </div>
+        </div>
+
+        <div class="img-mosaic reveal">
+          <div class="main">
+            <img src="images/WhatsApp%20Image%202026-03-01%20at%2010.39.10.jpeg" alt="Grundstück Übersicht" />
+          </div>
+          <div class="sub">
+            <img src="images/WhatsApp%20Image%202026-03-01%20at%2010.39.06.jpeg" alt="Grundstück im Frühling" />
+          </div>
+          <div class="sub">
+            <img src="images/Gro%C3%9F%20(20250422_100114).jpeg" alt="Frühling auf dem Grundstück" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Gallery ────────────────────────────────────────────── -->
+  <section id="gallery">
+    <div class="container">
+      <div class="tag" data-i18n="gal_tag">Bilder</div>
+      <h2 class="section-title" data-i18n="gal_title">Galerie</h2>
+      <p class="section-sub" data-i18n="gal_sub">Erkunden Sie das Grundstück und die Umgebung in Bildern.</p>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ─────────────────────────────────────────────── -->
+  <section id="contact" class="cta-section">
+    <div class="container">
+      <h2 data-i18n="cta_title">Interesse? Wir freuen uns auf Ihre Anfrage.</h2>
+      <p data-i18n="cta_sub">Kontaktieren Sie uns für weitere Informationen, Besichtigungstermine oder Preisfragen.</p>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="cc-icon">📞</div>
+          <div class="cc-label" data-i18n="cc_phone">Telefon</div>
+          <div class="cc-value">+36 XX XXX XXXX</div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-icon">✉️</div>
+          <div class="cc-label" data-i18n="cc_email">E-Mail</div>
+          <div class="cc-value">info@example.com</div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-icon">📍</div>
+          <div class="cc-label" data-i18n="cc_loc">Standort</div>
+          <div class="cc-value">Tahitótfalu, Ungarn</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────────── -->
+  <footer>
+    <p data-i18n="footer">© 2025 Baugrundstück Tahitótfalu · Alle Rechte vorbehalten</p>
+  </footer>
+
+  <!-- ─── Lightbox ────────────────────────────────────────────── -->
+  <div id="lightbox">
+    <button id="lb-close">✕</button>
+    <button class="lb-nav" id="lb-prev">&#8249;</button>
+    <img id="lb-img" src="" alt="Foto" />
+    <button class="lb-nav" id="lb-next">&#8250;</button>
+    <div id="lb-counter"></div>
+  </div>
+
+  <!-- ─── Translations ─────────────────────────────────────────── -->
+  <script>
+  const LANGS = {
+    de: {
+      brand:       'Tahitótfalu Immobilien',
+      nav_about:   'Über den Ort',
+      nav_reasons: 'Vorteile',
+      nav_property:'Grundstück',
+      nav_gallery: 'Galerie',
+      nav_contact: 'Kontakt',
+      hero_badge:  'Baugrundstück zum Verkauf',
+      hero_title:  'Ihr Traumgrundstück in <em>Tahitótfalu</em>',
+      hero_sub:    'Malerische Lage im Donauknie, nur 30 km von Budapest – mit allen Anschlüssen sofort bebaubar.',
+      hero_btn1:   'Grundstück entdecken',
+      hero_btn2:   'Kontakt aufnehmen',
+      scroll:      'Mehr entdecken',
+      fact1:       'von Budapest',
+      fact2_val:   'Natur pur',
+      fact2:       'Donauknie & Pilis',
+      fact3_val:   'Sofort',
+      fact3:       'Gas, Strom, Wasser & Abwasser',
+      fact4_val:   'Ideal',
+      fact4:       'für Familien',
+      about_tag:   'Der Ort',
+      about_title: 'Willkommen in Tahitótfalu',
+      about_sub:   'Ein Dorf, das Natur, Geschichte und Lebensqualität vereint – inmitten einer der schönsten Landschaften Ungarns.',
+      about_h3:    'Zwischen Donauknie und Pilis-Gebirge',
+      about_p1:    'Tahitótfalu liegt im Norden des Komitats Pest, rund 30 km nördlich des Budapester Stadtzentrums – direkt im malerischen Donauknie. Das Dorf mit rund <strong>10.000 Einwohnern</strong> besteht aus zwei historisch gewachsenen Ortsteilen: <strong>Tahi</strong> auf dem Festland und <strong>Tótfalu</strong> auf der Szentendre-Insel, verbunden durch die Tildy-Brücke.',
+      about_p2:    'Die Umgebung bietet atemberaubende Landschaften mit dem mächtigen Donaubogen, dichten Wäldern des Pilis-Gebirges und einer reichen Tier- und Pflanzenwelt. Historische Städte wie <strong>Szentendre</strong> und <strong>Visegrád</strong> sind in wenigen Autominuten erreichbar.',
+      about_p3:    'Das Dorf vereint das Beste zweier Welten: das ruhige Landleben in einer intakten Naturlandschaft – mit bequemem Zugang zu Budapest für Arbeit, Bildung und Kultur.',
+      about_p4:    'Das Grundstück liegt auf einem kleinen Hügel – kein Hochwasser, kein Straßenlärm. Bis zum romantischen Donauufer sind es nur <strong>5 Minuten zu Fuß</strong>.',
+      chip1: 'Pilis-Gebirge', chip2: 'Donauknie', chip3: 'Nähe Visegrád',
+      chip4: 'Nähe Szentendre', chip5: '28 km Budapest', chip6: 'Naturschutzgebiet',
+      reasons_tag:   'Warum hier bauen?',
+      reasons_title: '3 Gründe für junge Familien',
+      reasons_sub:   'Tahitótfalu ist kein gewöhnliches Dorf – es ist ein Ort, an dem Kinder aufblühen und Familien wurzeln.',
+      r1_title: 'Natur als Kinderzimmer',
+      r1_text:  'Endlose Wander- und Radwege durch das Pilis-Gebirge, der Donauarm zum Baden und Kajakfahren, saubere Luft und unberührte Natur direkt vor der Haustür. Kinder wachsen hier gesund, aktiv und mit echter Verbindung zur Natur auf – fern von Stadtlärm und Abgasen.',
+      r2_title: 'Sichere Gemeinschaft',
+      r2_text:  'Krippe am Ende der Straße, Kindergarten und Grundschule per Fahrrad erreichbar. Hausarzt, Zahnarzt und Kinderarzt sind im Ort; Fachärzte, Kino und Museen in Szentendre (10 km). Tesco, Rossmann und Bäckereien sind 10 Minuten zu Fuß entfernt, die Bushaltestelle nur 500 m vom Grundstück – Tahitótfalu verbindet Sicherheit, Gemeinschaft und beste Nahversorgung.',
+      r3_title: 'Budapest in 30 Minuten',
+      r3_text:  'Tahi liegt 18 km nördlich der Budapester Stadtgrenze und ca. 30 km vom Stadtzentrum. Die Verbindung gelingt per Auto, öffentlichem Bus – oder sogar mit dem Schiff über die Donau. Abends kehrt man in die Stille des Donaukniees zurück: die perfekte Balance für Pendlerfamilien.',
+      prop_tag:  'Das Grundstück',
+      prop_title:'Alles bereit – sofort bebaubar',
+      prop_sub:  'Dieses Grundstück in Tahitótfalu bietet ideale Voraussetzungen, um Ihr Traumhaus zu verwirklichen.',
+      f1_h: 'Lage',     f1_p: 'Tahitótfalu, Komitat Pest – Donauknie',
+      f2_h: 'Strom',    f2_p: 'In der Straße – Hausanschluss erforderlich',
+      f3_h: 'Wasser',   f3_p: 'In der Straße – Hausanschluss erforderlich',
+      f4_h: 'Gas',      f4_p: 'Auf dem Grundstück vorhanden',
+      f5_h: 'Abwasser', f5_p: 'In der Straße – Anschluss erforderlich',
+      f6_h: 'Nutzung',  f6_p: 'Baugrundstück – gewidmet für Wohnbau',
+      f7_h: 'Grundstücksgröße', f7_p: '790 m² – eben und gepflegt',
+      f8_h: 'Bauklasse',        f8_p: 'LKE-4: max. 30 % bebaubar, Höhe max. 5,5 m',
+      f9_h: 'Baumbestand',      f9_p: 'Walnuss, Pfirsich, Esskastanie, Pflaume',
+      prop_desc:   'Ein gepflegtes, ebenes Grundstück mit altem Baumbestand und Obstbäumen. Vogelgezwitscher, Eichhörnchen und idyllische Natur – und trotzdem ist die Bushaltestelle nur 500 m entfernt.',
+      infra_label: 'Infrastruktur & Nahversorgung',
+      infra1: '🚌 Bushaltestelle · 500 m',
+      infra2: '🏪 Tesco & Rossmann · 10 min zu Fuß',
+      infra3: '🏥 Arzt, Zahnarzt & Kinderarzt · im Ort',
+      infra4: '🌊 Donauufer · 5 min zu Fuß',
+      infra5: '🎓 Krippe, Kindergarten & Schule · in der Nähe',
+      infra6: '🚢 Schiff · Donauverbindung möglich',
+      prop_cta:  'Jetzt anfragen',
+      gal_tag:   'Bilder',
+      gal_title: 'Galerie',
+      gal_sub:   'Erkunden Sie das Grundstück und die Umgebung in Bildern.',
+      cta_title: 'Interesse? Wir freuen uns auf Ihre Anfrage.',
+      cta_sub:   'Kontaktieren Sie uns für weitere Informationen, Besichtigungstermine oder Preisfragen.',
+      cc_phone:  'Telefon',  cc_email: 'E-Mail', cc_loc: 'Standort',
+      footer:    '© 2025 Baugrundstück Tahitótfalu · Alle Rechte vorbehalten',
+    },
+
+    en: {
+      brand:       'Tahitótfalu Property',
+      nav_about:   'About the Area',
+      nav_reasons: 'Benefits',
+      nav_property:'The Plot',
+      nav_gallery: 'Gallery',
+      nav_contact: 'Contact',
+      hero_badge:  'Building Plot for Sale',
+      hero_title:  'Your Dream Plot in <em>Tahitótfalu</em>',
+      hero_sub:    'Scenic location in the Danube Bend, just 30 km from Budapest city centre – ready to build with all utilities available.',
+      hero_btn1:   'Explore the Plot',
+      hero_btn2:   'Get in Touch',
+      scroll:      'Discover More',
+      fact1:       'from Budapest',
+      fact2_val:   'Pure Nature',
+      fact2:       'Danube Bend & Pilis',
+      fact3_val:   'Ready Now',
+      fact3:       'Gas, Power, Water & Sewage',
+      fact4_val:   'Perfect',
+      fact4:       'for Families',
+      about_tag:   'The Location',
+      about_title: 'Welcome to Tahitótfalu',
+      about_sub:   'A village that combines nature, history and quality of life – in the heart of one of Hungary\'s most beautiful landscapes.',
+      about_h3:    'Between the Danube Bend and Pilis Mountains',
+      about_p1:    'Tahitótfalu is located in northern Pest County, around 30 km north of Budapest city centre – in the heart of the scenic Danube Bend. The village has around <strong>10,000 inhabitants</strong> and consists of two historically grown districts: <strong>Tahi</strong> on the mainland and <strong>Tótfalu</strong> on Szentendre Island, connected by the Tildy Bridge.',
+      about_p2:    'The surrounding area offers breathtaking scenery with the mighty Danube curve, dense forests of the Pilis Mountains and rich wildlife. Historic towns such as <strong>Szentendre</strong> and <strong>Visegrád</strong> are reachable within minutes by car.',
+      about_p3:    'The village combines the best of both worlds: peaceful rural life in an intact natural landscape – with easy access to Budapest for work, education and culture.',
+      about_p4:    'The plot sits on a small hill – no flooding, no street noise. The picturesque Danube bank is just a <strong>5-minute walk</strong> away.',
+      chip1: 'Pilis Mountains', chip2: 'Danube Bend', chip3: 'Near Visegrád',
+      chip4: 'Near Szentendre', chip5: '28 km to Budapest', chip6: 'Nature Reserve',
+      reasons_tag:   'Why build here?',
+      reasons_title: '3 Reasons for Young Families',
+      reasons_sub:   'Tahitótfalu is no ordinary village – it\'s a place where children thrive and families put down roots.',
+      r1_title: 'Nature as a Playground',
+      r1_text:  'Endless hiking and cycling trails through the Pilis Mountains, the Danube arm for swimming and kayaking, clean air and unspoilt nature right on your doorstep. Children grow up healthy, active and with a real connection to nature – far from city noise and pollution.',
+      r2_title: 'A Safe Community',
+      r2_text:  'A crèche is at the end of the street; kindergarten and primary school are reachable by bike. GPs, a dentist and a paediatrician are in the village; specialists, a cinema and museums in Szentendre (10 km). Tesco, Rossmann and bakeries are a 10-minute walk, and the bus stop is just 500 m from the plot.',
+      r3_title: 'Budapest in 30 Minutes',
+      r3_text:  'Tahi is 18 km north of the Budapest city boundary, around 30 km from the city centre. You can get there by car, public bus – or even by boat on the Danube. In the evenings, return to the tranquillity of the Danube Bend: the perfect balance for commuter families.',
+      prop_tag:  'The Property',
+      prop_title:'Everything Ready – Build Right Away',
+      prop_sub:  'This plot in Tahitótfalu offers ideal conditions to realise your dream home.',
+      f1_h: 'Location', f1_p: 'Tahitótfalu, Pest County – Danube Bend',
+      f2_h: 'Power',    f2_p: 'In the street – house connection required',
+      f3_h: 'Water',    f3_p: 'In the street – house connection required',
+      f4_h: 'Gas',      f4_p: 'On the plot – already connected',
+      f5_h: 'Sewage',   f5_p: 'In the street – connection required',
+      f6_h: 'Land Use',     f6_p: 'Building plot – designated for residential construction',
+      f7_h: 'Plot Size',    f7_p: '790 m² – flat and well-maintained',
+      f8_h: 'Building Rights', f8_p: 'LKE-4: max. 30% buildable, height up to 5.5 m',
+      f9_h: 'Fruit Trees',  f9_p: 'Walnut, Peach, Chestnut, Plum',
+      prop_desc:   'A well-maintained, flat plot with mature trees and fruit trees. Birdsong, squirrels and idyllic nature – yet the bus stop is just 500 m away.',
+      infra_label: 'Infrastructure & Local Amenities',
+      infra1: '🚌 Bus stop · 500 m',
+      infra2: '🏪 Tesco & Rossmann · 10 min walk',
+      infra3: '🏥 GP, Dentist & Paediatrician · in village',
+      infra4: '🌊 Danube bank · 5 min walk',
+      infra5: '🎓 Crèche, Kindergarten & School · nearby',
+      infra6: '🚢 Boat · Danube connection possible',
+      prop_cta:  'Enquire Now',
+      gal_tag:   'Photos',
+      gal_title: 'Gallery',
+      gal_sub:   'Explore the plot and surrounding area in pictures.',
+      cta_title: 'Interested? We look forward to your enquiry.',
+      cta_sub:   'Contact us for more information, viewing appointments or pricing details.',
+      cc_phone:  'Phone', cc_email: 'E-Mail', cc_loc: 'Location',
+      footer:    '© 2025 Tahitótfalu Building Plot · All rights reserved',
+    },
+
+    hu: {
+      brand:       'Tahitótfalu Ingatlan',
+      nav_about:   'A Helyszín',
+      nav_reasons: 'Előnyök',
+      nav_property:'A Telek',
+      nav_gallery: 'Galéria',
+      nav_contact: 'Kapcsolat',
+      hero_badge:  'Eladó Építési Telek',
+      hero_title:  'Álomtelked <em>Tahitótfalun</em>',
+      hero_sub:    'Festői panoráma a Dunakanyarban, mindössze 30 km-re Budapest belvárosától – azonnal beépíthető, minden közműval.',
+      hero_btn1:   'Fedezd fel a telket',
+      hero_btn2:   'Kapcsolatfelvétel',
+      scroll:      'Fedezz fel többet',
+      fact1:       'Budapesttől',
+      fact2_val:   'Természet',
+      fact2:       'Dunakanyar & Pilis',
+      fact3_val:   'Azonnal',
+      fact3:       'Gáz, Villany, Víz & Csatorna',
+      fact4_val:   'Tökéletes',
+      fact4:       'Családoknak',
+      about_tag:   'A Helyszín',
+      about_title: 'Üdvözöljük Tahitótfalun',
+      about_sub:   'Egy olyan falu, amely egyesíti a természetet, a történelmet és az életminőséget – Magyarország egyik legszebb táján.',
+      about_h3:    'A Dunakanyar és a Pilis-hegység között',
+      about_p1:    'Tahitótfalu Pest megye északi részén, Budapest belvárosától kb. 30 km-re, a festői Dunakanyarban fekszik. A körülbelül <strong>10 000 lakos</strong>ú község két történelmileg kialakult részből áll: <strong>Tahi</strong> a szárazföldön és <strong>Tótfalu</strong> a Szentendre-szigeten, amelyeket a Tildy-híd köt össze.',
+      about_p2:    'A környék lélegzetelállító tájakat kínál: a hatalmas Duna-kanyart, a Pilis-hegység sűrű erdeit és gazdag élővilágot. A történelmi városok, mint <strong>Szentendre</strong> és <strong>Visegrád</strong>, perceken belül elérhetők autóval.',
+      about_p3:    'A falu a két világ legjobb tulajdonságait ötvözi: csendes vidéki élet érintetlen természeti környezetben – és könnyen elérhető Budapest munkalehetőségekkel, oktatással és kultúrával.',
+      about_p4:    'A telek egy kis dombon helyezkedik el – árvíz és zajszennyezés nem fenyegeti. A romantikus Duna-part mindössze <strong>5 perc sétára</strong> van.',
+      chip1: 'Pilis-hegység', chip2: 'Dunakanyar', chip3: 'Közel Visegrádhoz',
+      chip4: 'Közel Szentendréhez', chip5: '28 km Budapest', chip6: 'Természetvédelmi terület',
+      reasons_tag:   'Miért érdemes itt építeni?',
+      reasons_title: '3 ok fiatal családoknak',
+      reasons_sub:   'Tahitótfalu nem egy hétköznapi falu – olyan hely, ahol a gyerekek virágzanak és a családok gyökeret eresztenek.',
+      r1_title: 'A természet mint gyerekszoba',
+      r1_text:  'Végtelen túraútvonalak és kerékpárutak a Pilis-hegységben, a Duna-ág úszáshoz és kajaktúrákhoz, tiszta levegő és érintetlen természet közvetlenül az ajtó előtt. A gyerekek egészségesen, aktívan nőnek fel, valódi kapcsolatban a természettel – messze a városi zajtól és a szennyezettségtől.',
+      r2_title: 'Biztonságos közösség',
+      r2_text:  'Az utca végén bölcsőde, kerékpárral elérhető óvoda és általános iskola. Háziorvos, fogorvos és gyermekorvos a faluban; szakorvosok, mozi és múzeumok Szentendrén (10 km). Tesco, Rossmann és pékségek 10 perc séta, a buszmegálló mindössze 500 m-re a telektől.',
+      r3_title: 'Budapest 30 perc alatt',
+      r3_text:  'Tahi Budapest városhatárától 18 km-re, a belvárostól kb. 30 km-re fekszik. Az összeköttetés sokféle: autóval, menetrendszerű busszal – sőt Dunán hajóval is megközelíthető. Este visszatérhetsz a Dunakanyar csendjébe: tökéletes egyensúly az ingázó családoknak.',
+      prop_tag:  'A Telek',
+      prop_title:'Minden készen áll – azonnal beépíthető',
+      prop_sub:  'Ez a tahitótfalui telek ideális feltételeket kínál álomotthonod megvalósításához.',
+      f1_h: 'Helyszín',    f1_p: 'Tahitótfalu, Pest megye – Dunakanyar',
+      f2_h: 'Villany',     f2_p: 'Az utcában – bekötés szükséges',
+      f3_h: 'Víz',         f3_p: 'Az utcában – bekötés szükséges',
+      f4_h: 'Gáz',         f4_p: 'A telken kiépítve',
+      f5_h: 'Csatorna',    f5_p: 'Az utcában – bekötés szükséges',
+      f6_h: 'Felhasználás',  f6_p: 'Építési telek – lakóházi célú beépítésre kijelölve',
+      f7_h: 'Telekterület',  f7_p: '790 m² – sík, gondozott telek',
+      f8_h: 'Beépíthetőség', f8_p: 'LKE-4: max. 30% beépíthető, épületmagasság max. 5,5 m',
+      f9_h: 'Gyümölcsfák',   f9_p: 'Dió, barack, szelídgesztenye, szilva',
+      prop_desc:   'Gondozott, sík telek öreg fákkal és gyümölcsfákkal. Madárcsicsergés, mókusok és idilli természet – mégis a buszmegálló csak 500 m-re van.',
+      infra_label: 'Infrastruktúra és ellátottság',
+      infra1: '🚌 Buszmegálló · 500 m',
+      infra2: '🏪 Tesco & Rossmann · 10 perc séta',
+      infra3: '🏥 Orvos, fogorvos & gyermekorvos · a faluban',
+      infra4: '🌊 Duna-part · 5 perc séta',
+      infra5: '🎓 Bölcsőde, óvoda & iskola · közel',
+      infra6: '🚢 Hajó · Duna-összeköttetés lehetséges',
+      prop_cta:  'Érdeklődöm',
+      gal_tag:   'Fotók',
+      gal_title: 'Galéria',
+      gal_sub:   'Fedezze fel a telket és a környéket képeken keresztül.',
+      cta_title: 'Érdekli? Örömmel várjuk megkeresését.',
+      cta_sub:   'Keressen fel minket további információkért, megtekintési időpontért vagy árajánlatért.',
+      cc_phone:  'Telefon', cc_email: 'E-mail', cc_loc: 'Helyszín',
+      footer:    '© 2025 Tahitótfalu Építési Telek · Minden jog fenntartva',
+    }
+  };
+
+  let currentLang = 'hu';
+
+  function setLang(lang) {
+    currentLang = lang;
+    const t = LANGS[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+    });
+    document.documentElement.lang = lang;
+  }
+
+  // ─── Hero Slider ──────────────────────────────────────────────
+  const slides = document.querySelectorAll('.hero-slide');
+  const dotsContainer = document.getElementById('heroDots');
+  let current = 0, timer;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'hero-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goSlide(i);
+    dotsContainer.appendChild(d);
+  });
+
+  function goSlide(n) {
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+    resetTimer();
+  }
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goSlide(current + 1), 5000);
+  }
+  resetTimer();
+  setLang('hu');
+
+  // ─── Gallery ──────────────────────────────────────────────────
+  const IMAGES = [
+    { src: "images/WhatsApp%20Image%202026-03-01%20at%2010.39.10.jpeg",      alt: "Grundstück Übersicht mit Narzissen" },
+    { src: "images/WhatsApp%20Image%202026-03-01%20at%2010.39.10%20(2).jpeg", alt: "Grundstück im Frühling" },
+    { src: "images/WhatsApp%20Image%202026-03-01%20at%2010.39.10%20(3).jpeg", alt: "Weitblick über das Grundstück" },
+    { src: "images/WhatsApp%20Image%202026-03-01%20at%2010.39.06.jpeg",       alt: "Grüne Wiese mit Bäumen" },
+    { src: "images/WhatsApp%20Image%202026-03-01%20at%2010.39.06%20(1).jpeg", alt: "Flieder und Natur" },
+    { src: "images/WhatsApp%20Image%202026-03-01%20at%2010.39.07.jpeg",       alt: "Grundstück mit altem Baumbestand" },
+    { src: "images/WhatsApp%20Image%202026-03-01%20at%2010.39.07%20(1).jpeg", alt: "Gartenblick im Frühling" },
+    { src: "images/Gro%C3%9F%20(20250422_100028).jpeg",  alt: "Frühlingsblüte auf dem Grundstück" },
+    { src: "images/Gro%C3%9F%20(20250422_095832).jpeg",  alt: "Bäume im Sonnenlicht" },
+    { src: "images/Gro%C3%9F%20(20250422_100529).jpeg",  alt: "Grüne Wiese im Frühling" },
+    { src: "images/Gro%C3%9F%20(20250422_100124).jpeg",  alt: "Blaufichte und Narzissen" },
+    { src: "images/Gro%C3%9F%20(20250422_100231).jpeg",  alt: "Üppiges Grün" },
+    { src: "images/Gro%C3%9F%20(20250422_100235).jpeg",  alt: "Bäume auf dem Grundstück" },
+    { src: "images/Gro%C3%9F%20(20250422_100114).jpeg",  alt: "Frühjahrslandschaft" },
+  ];
+
+  const grid = document.getElementById('galleryGrid');
+  IMAGES.forEach((img, i) => {
+    const item = document.createElement('div');
+    item.className = 'gal-item reveal';
+    item.style.transitionDelay = (i % 4 * 0.08) + 's';
+    item.innerHTML = `
+      <img src="${img.src}" alt="${img.alt}" loading="lazy" />
+      <div class="gal-overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+      </div>`;
+    item.onclick = () => openLightbox(i);
+    grid.appendChild(item);
+  });
+
+  // ─── Lightbox ─────────────────────────────────────────────────
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCounter = document.getElementById('lb-counter');
+  let lbIndex = 0;
+
+  function openLightbox(i) {
+    lbIndex = i;
+    updateLightbox();
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function updateLightbox() {
+    lbImg.src = IMAGES[lbIndex].src;
+    lbImg.alt = IMAGES[lbIndex].alt;
+    lbCounter.textContent = (lbIndex + 1) + ' / ' + IMAGES.length;
+  }
+  document.getElementById('lb-close').onclick = closeLightbox;
+  document.getElementById('lb-prev').onclick = () => { lbIndex = (lbIndex - 1 + IMAGES.length) % IMAGES.length; updateLightbox(); };
+  document.getElementById('lb-next').onclick = () => { lbIndex = (lbIndex + 1) % IMAGES.length; updateLightbox(); };
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft')  { lbIndex = (lbIndex - 1 + IMAGES.length) % IMAGES.length; updateLightbox(); }
+    if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % IMAGES.length; updateLightbox(); }
+  });
+
+  // ─── Navbar scroll ─────────────────────────────────────────────
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ─── Scroll Reveal ─────────────────────────────────────────────
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

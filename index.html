@@ -178,11 +178,11 @@
     /* ─── Quick-Facts Strip ───────────────────────────────────── */
     .facts-strip {
       background: var(--green);
-      display: grid; grid-template-columns: repeat(4, 1fr);
+      display: grid; grid-template-columns: repeat(6, 1fr);
       gap: 0;
     }
     .fact-item {
-      text-align: center; padding: 1.8rem 1rem;
+      text-align: center; padding: 1.8rem 0.6rem;
       border-right: 1px solid rgba(255,255,255,0.15);
     }
     .fact-item:last-child { border-right: none; }
@@ -441,7 +441,7 @@
 
     /* ─── Responsive ──────────────────────────────────────────── */
     @media (max-width: 980px) {
-      .facts-strip { grid-template-columns: repeat(2, 1fr); }
+      .facts-strip { grid-template-columns: repeat(3, 1fr); }
       .about-grid, .property-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .reasons-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -489,7 +489,7 @@
 
     <div class="hero-content">
       <div class="hero-badge" data-i18n="hero_badge">Baugrundstück zum Verkauf</div>
-      <h1 data-i18n="hero_title">Ihr Traumgrundstück in <em>Tahitótfalu</em></h1>
+      <h1 data-i18n="hero_title">Ihr Traumgrundstück in <em>Tahitótfalu (Tahi)</em></h1>
       <p data-i18n="hero_sub">Malerische Lage im Donauknie, nur 28 km von Budapest – mit allen Anschlüssen sofort bebaubar.</p>
       <div class="hero-cta">
         <a href="#property" class="btn-amber" data-i18n="hero_btn1">Grundstück entdecken</a>
@@ -529,6 +529,16 @@
       <span class="fact-value" data-i18n="fact4_val">Ideal</span>
       <span class="fact-label" data-i18n="fact4">für Familien</span>
     </div>
+    <div class="fact-item">
+      <div class="fact-icon">📐</div>
+      <span class="fact-value">790 m²</span>
+      <span class="fact-label" data-i18n="fact5">Grundstücksfläche</span>
+    </div>
+    <div class="fact-item">
+      <div class="fact-icon">💰</div>
+      <span class="fact-value" data-i18n="fact6_val">34,99 Mio.</span>
+      <span class="fact-label" data-i18n="fact6">Forint · VB</span>
+    </div>
   </div>
 
   <!-- ─── About Tahitótfalu ───────────────────────────────────── -->
@@ -544,7 +554,7 @@
         </div>
         <div class="about-text reveal reveal-delay-1">
           <h3 data-i18n="about_h3">Zwischen Donauknie und Pilis-Gebirge</h3>
-          <p data-i18n="about_p1">Tahitótfalu liegt im Norden des Komitats Pest, rund 28 km nördlich von Budapest – direkt im malerischen Donauknie. Das Dorf besteht aus zwei historisch gewachsenen Ortsteilen: <strong>Tahi</strong> auf dem Festland und <strong>Tótfalu</strong> auf der Szentendre-Insel, verbunden durch die Tildy-Brücke.</p>
+          <p data-i18n="about_p1">Tahitótfalu liegt im Norden des Komitats Pest, rund 28 km nördlich von Budapest – direkt im malerischen Donauknie. Das Dorf besteht aus zwei historisch gewachsenen Ortsteilen: <strong>Tahi</strong> auf dem Festland und <strong>Tótfalu</strong> auf der Szentendre-Insel, verbunden durch die Tildy-Brücke. Das Grundstück liegt im Ortsteil <strong>Tahi</strong> – dem moderneren und dynamischeren Teil, der besonders bei jungen und urbanen Menschen sehr beliebt ist.</p>
           <p data-i18n="about_p2">Die Umgebung bietet atemberaubende Landschaften mit dem mächtigen Donaubogen, dichten Wäldern des Pilis-Gebirges und einer reichen Tier- und Pflanzenwelt. Historische Städte wie <strong>Szentendre</strong> und <strong>Visegrád</strong> sind in wenigen Autominuten erreichbar.</p>
           <p data-i18n="about_p3">Das Dorf vereint das Beste zweier Welten: das ruhige Landleben in einer intakten Naturlandschaft – mit bequemem Zugang zu Budapest für Arbeit, Bildung und Kultur.</p>
           <p data-i18n="about_p4">Das Grundstück liegt auf einem kleinen Hügel – kein Hochwasser, kein Straßenlärm. Bis zum romantischen Donauufer sind es nur <strong>5 Minuten zu Fuß</strong>.</p>
@@ -624,7 +634,14 @@
               <span class="feat-ic">📍</span>
               <div class="feat-info">
                 <h4 data-i18n="f1_h">Lage</h4>
-                <p data-i18n="f1_p">Tahitótfalu, Komitat Pest – Donauknie</p>
+                <p data-i18n="f1_p">Ortsteil Tahi, Tahitótfalu – Donauknie</p>
+              </div>
+            </div>
+            <div class="feat">
+              <span class="feat-ic">💰</span>
+              <div class="feat-info">
+                <h4 data-i18n="price_h">Preis</h4>
+                <p data-i18n="price_p">34,99 Mio. Ft · Verhandlungsbasis</p>
               </div>
             </div>
             <div class="feat">
@@ -756,7 +773,7 @@
       nav_gallery: 'Galerie',
       nav_contact: 'Kontakt',
       hero_badge:  'Baugrundstück zum Verkauf',
-      hero_title:  'Ihr Traumgrundstück in <em>Tahitótfalu</em>',
+      hero_title:  'Ihr Traumgrundstück in <em>Tahitótfalu (Tahi)</em>',
       hero_sub:    'Malerische Lage im Donauknie, nur 30 km von Budapest – mit allen Anschlüssen sofort bebaubar.',
       hero_btn1:   'Grundstück entdecken',
       hero_btn2:   'Kontakt aufnehmen',
@@ -768,11 +785,14 @@
       fact3:       'Gas, Strom, Wasser & Abwasser',
       fact4_val:   'Ideal',
       fact4:       'für Familien',
+      fact5:       'Grundstücksfläche',
+      fact6_val:   '34,99 Mio.',
+      fact6:       'Forint · VB',
       about_tag:   'Der Ort',
       about_title: 'Willkommen in Tahitótfalu',
       about_sub:   'Ein Dorf, das Natur, Geschichte und Lebensqualität vereint – inmitten einer der schönsten Landschaften Ungarns.',
       about_h3:    'Zwischen Donauknie und Pilis-Gebirge',
-      about_p1:    'Tahitótfalu liegt im Norden des Komitats Pest, rund 30 km nördlich des Budapester Stadtzentrums – direkt im malerischen Donauknie. Das Dorf mit rund <strong>10.000 Einwohnern</strong> besteht aus zwei historisch gewachsenen Ortsteilen: <strong>Tahi</strong> auf dem Festland und <strong>Tótfalu</strong> auf der Szentendre-Insel, verbunden durch die Tildy-Brücke.',
+      about_p1:    'Tahitótfalu liegt im Norden des Komitats Pest, rund 30 km nördlich des Budapester Stadtzentrums – direkt im malerischen Donauknie. Das Dorf mit rund <strong>10.000 Einwohnern</strong> besteht aus zwei historisch gewachsenen Ortsteilen: <strong>Tahi</strong> auf dem Festland und <strong>Tótfalu</strong> auf der Szentendre-Insel, verbunden durch die Tildy-Brücke. Das Grundstück liegt im Ortsteil <strong>Tahi</strong> – dem moderneren und dynamischeren Teil, der besonders bei jungen und urbanen Menschen sehr beliebt ist.',
       about_p2:    'Die Umgebung bietet atemberaubende Landschaften mit dem mächtigen Donaubogen, dichten Wäldern des Pilis-Gebirges und einer reichen Tier- und Pflanzenwelt. Historische Städte wie <strong>Szentendre</strong> und <strong>Visegrád</strong> sind in wenigen Autominuten erreichbar.',
       about_p3:    'Das Dorf vereint das Beste zweier Welten: das ruhige Landleben in einer intakten Naturlandschaft – mit bequemem Zugang zu Budapest für Arbeit, Bildung und Kultur.',
       about_p4:    'Das Grundstück liegt auf einem kleinen Hügel – kein Hochwasser, kein Straßenlärm. Bis zum romantischen Donauufer sind es nur <strong>5 Minuten zu Fuß</strong>.',
@@ -790,7 +810,8 @@
       prop_tag:  'Das Grundstück',
       prop_title:'Alles bereit – sofort bebaubar',
       prop_sub:  'Dieses Grundstück in Tahitótfalu bietet ideale Voraussetzungen, um Ihr Traumhaus zu verwirklichen.',
-      f1_h: 'Lage',     f1_p: 'Tahitótfalu, Komitat Pest – Donauknie',
+      f1_h: 'Lage',     f1_p: 'Ortsteil Tahi, Tahitótfalu – Donauknie',
+      price_h: 'Preis', price_p: '34,99 Mio. Ft · Verhandlungsbasis',
       f2_h: 'Strom',    f2_p: 'In der Straße – Hausanschluss erforderlich',
       f3_h: 'Wasser',   f3_p: 'In der Straße – Hausanschluss erforderlich',
       f4_h: 'Gas',      f4_p: 'Auf dem Grundstück vorhanden',
@@ -825,7 +846,7 @@
       nav_gallery: 'Gallery',
       nav_contact: 'Contact',
       hero_badge:  'Building Plot for Sale',
-      hero_title:  'Your Dream Plot in <em>Tahitótfalu</em>',
+      hero_title:  'Your Dream Plot in <em>Tahitótfalu (Tahi)</em>',
       hero_sub:    'Scenic location in the Danube Bend, just 30 km from Budapest city centre – ready to build with all utilities available.',
       hero_btn1:   'Explore the Plot',
       hero_btn2:   'Get in Touch',
@@ -837,11 +858,14 @@
       fact3:       'Gas, Power, Water & Sewage',
       fact4_val:   'Perfect',
       fact4:       'for Families',
+      fact5:       'Plot Size',
+      fact6_val:   'HUF 34.99M',
+      fact6:       'asking price',
       about_tag:   'The Location',
       about_title: 'Welcome to Tahitótfalu',
       about_sub:   'A village that combines nature, history and quality of life – in the heart of one of Hungary\'s most beautiful landscapes.',
       about_h3:    'Between the Danube Bend and Pilis Mountains',
-      about_p1:    'Tahitótfalu is located in northern Pest County, around 30 km north of Budapest city centre – in the heart of the scenic Danube Bend. The village has around <strong>10,000 inhabitants</strong> and consists of two historically grown districts: <strong>Tahi</strong> on the mainland and <strong>Tótfalu</strong> on Szentendre Island, connected by the Tildy Bridge.',
+      about_p1:    'Tahitótfalu is located in northern Pest County, around 30 km north of Budapest city centre – in the heart of the scenic Danube Bend. The village has around <strong>10,000 inhabitants</strong> and consists of two historically grown districts: <strong>Tahi</strong> on the mainland and <strong>Tótfalu</strong> on Szentendre Island, connected by the Tildy Bridge. The plot is situated in the <strong>Tahi</strong> district – the more modern and dynamic part, which is particularly popular with young and urban people.',
       about_p2:    'The surrounding area offers breathtaking scenery with the mighty Danube curve, dense forests of the Pilis Mountains and rich wildlife. Historic towns such as <strong>Szentendre</strong> and <strong>Visegrád</strong> are reachable within minutes by car.',
       about_p3:    'The village combines the best of both worlds: peaceful rural life in an intact natural landscape – with easy access to Budapest for work, education and culture.',
       about_p4:    'The plot sits on a small hill – no flooding, no street noise. The picturesque Danube bank is just a <strong>5-minute walk</strong> away.',
@@ -859,7 +883,8 @@
       prop_tag:  'The Property',
       prop_title:'Everything Ready – Build Right Away',
       prop_sub:  'This plot in Tahitótfalu offers ideal conditions to realise your dream home.',
-      f1_h: 'Location', f1_p: 'Tahitótfalu, Pest County – Danube Bend',
+      f1_h: 'Location', f1_p: 'Tahi district, Tahitótfalu – Danube Bend',
+      price_h: 'Price', price_p: 'HUF 34.99M · negotiable',
       f2_h: 'Power',    f2_p: 'In the street – house connection required',
       f3_h: 'Water',    f3_p: 'In the street – house connection required',
       f4_h: 'Gas',      f4_p: 'On the plot – already connected',
@@ -894,7 +919,7 @@
       nav_gallery: 'Galéria',
       nav_contact: 'Kapcsolat',
       hero_badge:  'Eladó Építési Telek',
-      hero_title:  'Álomtelked <em>Tahitótfalun</em>',
+      hero_title:  'Álomtelked <em>Tahitótfalun (Tahi)</em>',
       hero_sub:    'Festői panoráma a Dunakanyarban, mindössze 30 km-re Budapest belvárosától – azonnal beépíthető, minden közműval.',
       hero_btn1:   'Fedezd fel a telket',
       hero_btn2:   'Kapcsolatfelvétel',
@@ -906,11 +931,14 @@
       fact3:       'Gáz, Villany, Víz & Csatorna',
       fact4_val:   'Tökéletes',
       fact4:       'Családoknak',
+      fact5:       'Telekterület',
+      fact6_val:   '34,99 M Ft',
+      fact6:       'tárgyalható ár',
       about_tag:   'A Helyszín',
       about_title: 'Üdvözöljük Tahitótfalun',
       about_sub:   'Egy olyan falu, amely egyesíti a természetet, a történelmet és az életminőséget – Magyarország egyik legszebb táján.',
       about_h3:    'A Dunakanyar és a Pilis-hegység között',
-      about_p1:    'Tahitótfalu Pest megye északi részén, Budapest belvárosától kb. 30 km-re, a festői Dunakanyarban fekszik. A körülbelül <strong>10 000 lakos</strong>ú község két történelmileg kialakult részből áll: <strong>Tahi</strong> a szárazföldön és <strong>Tótfalu</strong> a Szentendre-szigeten, amelyeket a Tildy-híd köt össze.',
+      about_p1:    'Tahitótfalu Pest megye északi részén, Budapest belvárosától kb. 30 km-re, a festői Dunakanyarban fekszik. A körülbelül <strong>10 000 lakos</strong>ú község két történelmileg kialakult részből áll: <strong>Tahi</strong> a szárazföldön és <strong>Tótfalu</strong> a Szentendre-szigeten, amelyeket a Tildy-híd köt össze. A telek <strong>Tahi</strong> városrészben található – ez a modernebb, pezsgőbb terület, amely különösen népszerű a fiatal és városi életmódot kedvelők körében.',
       about_p2:    'A környék lélegzetelállító tájakat kínál: a hatalmas Duna-kanyart, a Pilis-hegység sűrű erdeit és gazdag élővilágot. A történelmi városok, mint <strong>Szentendre</strong> és <strong>Visegrád</strong>, perceken belül elérhetők autóval.',
       about_p3:    'A falu a két világ legjobb tulajdonságait ötvözi: csendes vidéki élet érintetlen természeti környezetben – és könnyen elérhető Budapest munkalehetőségekkel, oktatással és kultúrával.',
       about_p4:    'A telek egy kis dombon helyezkedik el – árvíz és zajszennyezés nem fenyegeti. A romantikus Duna-part mindössze <strong>5 perc sétára</strong> van.',
@@ -928,7 +956,8 @@
       prop_tag:  'A Telek',
       prop_title:'Minden készen áll – azonnal beépíthető',
       prop_sub:  'Ez a tahitótfalui telek ideális feltételeket kínál álomotthonod megvalósításához.',
-      f1_h: 'Helyszín',    f1_p: 'Tahitótfalu, Pest megye – Dunakanyar',
+      f1_h: 'Helyszín',    f1_p: 'Tahi városrész, Tahitótfalu – Dunakanyar',
+      price_h: 'Ár', price_p: '34,99 M Ft · tárgyalható',
       f2_h: 'Villany',     f2_p: 'Az utcában – bekötés szükséges',
       f3_h: 'Víz',         f3_p: 'Az utcában – bekötés szükséges',
       f4_h: 'Gáz',         f4_p: 'A telken kiépítve',
